@@ -50,3 +50,47 @@ public class Minesweeper {
     }
 }
 
+//////////////////////////////////////
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+class MinesweeperTest {
+
+    @Test
+    void testSingleRow() {
+        List<String> input = List.of("*  ");
+        List<String> expected = List.of("*1 ");
+        assertEquals(expected, new Minesweeper(input).withNumbers());
+    }
+
+    @Test
+    void testSingleColumn() {
+        List<String> input = List.of(" ", " ", "*", " ");
+        List<String> expected = List.of(" ", "1", "*", "1");
+        assertEquals(expected, new Minesweeper(input).withNumbers());
+    }
+
+    @Test
+    void testMultipleRowsColumns() {
+        List<String> input = List.of(
+                "  *  ",
+                "     ",
+                "*****",
+                "  *  ",
+                "     "
+        );
+
+        List<String> expected = List.of(
+                " 2*2 ",
+                "25*52",
+                "*****",
+                "25*52",
+                " 2*2 "
+        );
+
+        assertEquals(expected, new Minesweeper(input).withNumbers());
+    }
+}
+
