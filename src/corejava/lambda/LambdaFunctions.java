@@ -1,4 +1,4 @@
-package javaessentials.lambda;
+package corejava.lambda;
 
 public class LambdaFunctions {
 }

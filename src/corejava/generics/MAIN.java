@@ -1,4 +1,4 @@
-package javaessentials.generics;
+package corejava.generics;
 
 import javaessentials.generics.CustomGenericArrayList;
 
